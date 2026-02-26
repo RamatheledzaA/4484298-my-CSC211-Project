@@ -90,7 +90,7 @@ public class A13Practical {
         return -1 ;
 
     }
-
+// now let's do the binaryasearh section
     public static int binarySearch( int [] array , int target) {
         int low = 0;
         int high = array.length - 1;
@@ -107,6 +107,7 @@ public class A13Practical {
         return -1;
 
     }
+    // creating a method that will calculate the average and starndard deviation
 
     private  static double average( double [] values){
         double sum = 0;
@@ -122,6 +123,7 @@ public class A13Practical {
 
 
 }
+
 
 
 
