@@ -3,13 +3,14 @@
 // copy the code for the previous prac and edit it
 
 import java.text.DecimalFormat;
+import java.util.LinkedList;
 import java.util.Random;
 
 public class A14Practical {
     public class timeMethods{
 
     }
-    public static int N = 30;
+    public static int N = 20;
     public static void main(String [] args) {
         DecimalFormat twoD = new DecimalFormat("0.00");
         DecimalFormat fourD = new DecimalFormat(" 0.0000");
@@ -32,9 +33,30 @@ public class A14Practical {
 
         runTime = 0;
 
+        // this is for the the open hash section
+        // we first have to initialis the linked lists
+        for (int i = 1 ; i <= N ; i++){
+            table[i] = new LinkedList<>();
+        }
+        insert("Ben");
+
 
     }
-    
+    //Implement a method for an open hash table.
+    //public static int N = 20 ;
+
+    static LinkedList < String>[] table = new LinkedList[N]; // IN OPEN HASH WE USE LINKED LISTS
+
+    static void insert (int key){
+        int index = key % N;
+        table[index].add(key);
+    }
+
+    static void display(){
+        for (int i = 0 ; i < N ; i++){
+            System.out.println(i + "-> " + table[i]);
+        }
+    }
 
 
 }
