@@ -38,7 +38,7 @@ public class A14Practical {
         for (int i = 1 ; i <= N ; i++){
             table[i] = new LinkedList<>();
         }
-        insert("Ben");
+
 
 
     }
@@ -47,14 +47,9 @@ public class A14Practical {
 
     static LinkedList < String>[] table = new LinkedList[N]; // IN OPEN HASH WE USE LINKED LISTS
 
-    static void insert (int key){
-        int index = key % N;
-        table[index].add(key);
-    }
 
-    static void display(){
-        for (int i = 0 ; i < N ; i++){
-            System.out.println(i + "-> " + table[i]);
+
+    
         }
     }
 
