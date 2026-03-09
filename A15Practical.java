@@ -34,8 +34,24 @@ public class A15Practical {
                 Arrays.sort(charcters);
 
                 //now create a key
+                String key = new String(charcters);
+                // if the character is not in the map
+                if(!map.containsKey(key)){
+                    ArrayList<String> list = new ArrayList<>();
+                    list.add(word);
+                    map.put( key , list);
+                }else{
+                    map.get(key).add(word);
+                }
             }
-
+        }
+        scan.close();
+        //print everything
+        for(String key : map.keySet()){
+            ArrayList<String> list = new ArrayList<>();
+            if(list.size()> 1) {
+                System.out.println(key + ":" + list);
+            }
         }
     }
 }
