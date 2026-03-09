@@ -33,7 +33,7 @@ public class A14Practical {
 
         runTime = 0;
 
-        // this is for the the open hash section
+        // this is for the open hash section
         // we first have to initialis the linked lists
         for (int i = 1 ; i <= N ; i++){
             table[i] = new LinkedList<>();
@@ -47,11 +47,6 @@ public class A14Practical {
 
     static LinkedList < String>[] table = new LinkedList[N]; // IN OPEN HASH WE USE LINKED LISTS
 
-
-
-    
-        }
-    }
 
 
 }
