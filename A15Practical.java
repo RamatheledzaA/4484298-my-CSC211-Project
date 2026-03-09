@@ -2,6 +2,7 @@
 
 
 import java.io.File;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -30,11 +31,11 @@ public class A15Practical {
                 }
 
                 // now change every word into a character and put them in an array and sort them
-                char[] charcters = word.toCharArray();
-                Arrays.sort(charcters);
+                char[] charaters = word.toCharArray();
+                Arrays.sort(charaters);
 
                 //now create a key
-                String key = new String(charcters);
+                String key = new String(charaters);
                 // if the character is not in the map
                 if(!map.containsKey(key)){
                     ArrayList<String> list = new ArrayList<>();
@@ -46,12 +47,24 @@ public class A15Practical {
             }
         }
         scan.close();
-        //print everything
+        //print everything on an Anagram text file
+        PrintWriter writer = new PrintWriter("Anagram.txt");
+        writer.println("\\documentclass{article}");
+        writer.println("\\begin{document}");
+        writer.println("\\ section*{Dictionery of anagrams");
+        writer.println("\\begin{itemize}");
+
         for(String key : map.keySet()){
             ArrayList<String> list = new ArrayList<>();
             if(list.size()> 1) {
                 System.out.println(key + ":" + list);
             }
         }
+
+        writer.println("\\ end{itemize}");
+        writer.println("\\end{Document}");
+
+
+
     }
 }
