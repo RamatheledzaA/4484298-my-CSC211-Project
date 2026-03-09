@@ -19,7 +19,7 @@ public class A15Practical {
         // now we need to read every line in the txt file
         while(scan.hasNextLine()){
             String line = scan.nextLine();
-            String[] words = line.split(""); // split the line into words and put them in an array
+            String[] words = line.split("\\s+"); // split the line into words and put them in an array
 
             for( String word : words){
                 word = word.replaceAll("[^a-zA-Z]","");// this removes all the puntuations
@@ -48,14 +48,14 @@ public class A15Practical {
         }
         scan.close();
         //print everything on an Anagram text file
-        PrintWriter writer = new PrintWriter("Anagram.txt");
+        PrintWriter writer = new PrintWriter("anagrams.tex");
         writer.println("\\documentclass{article}");
         writer.println("\\begin{document}");
         writer.println("\\ section*{Dictionery of anagrams");
         writer.println("\\begin{itemize}");
 
         for(String key : map.keySet()){
-            ArrayList<String> list = new ArrayList<>();
+            ArrayList<String> list = map.get(key);
             if(list.size()> 1) {
                 System.out.println(key + ":" + list);
             }
